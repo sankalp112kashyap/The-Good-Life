@@ -1,0 +1,190 @@
+<%- include("header") -%>
+
+
+<%- include("sidenav") -%>
+
+<style>
+    .bigtext{
+        font-size: 200px;
+    }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function(){				
+        $('#like').click(function(e){
+            e.preventDefault();
+            var data = {};
+			data.title = "title";
+			data.message = "message";
+            $.ajax({
+                type: 'POST',
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                url: 'http://localhost:3000/community',						
+                success: function(data) {
+                    console.log('success');
+                    console.log(JSON.stringify(data));
+                }
+            });
+        });	
+        			
+    });
+
+    $(function(){				
+        $('#add_comment').click(function(e){
+            e.preventDefault();
+            var data = {};
+			data.title = "title";
+            data.message = "message";
+            $.ajax({
+                type: 'POST',
+                data: data,
+                contentType: 'application/json',
+                url: 'http://localhost:3000/community',						
+                success: function(data) {
+                    console.log('success');
+                    console.log(JSON.stringify(data));
+                }
+            });
+        });				
+    });
+</script>
+
+
+
+    <!-- BEGIN: Page Main-->
+    <div id="main">
+      <div class="row">
+        <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+        <div class="col s12">
+          <div class="container">
+          
+
+  <div class="col s12 ">
+      <div id="inline-form" class="card card card-default scrollspy">
+        <div class="card-content">
+
+             <div id="view-higlight-table" class="active">
+              <div class="row">
+                    <div class="col m4 s12">
+
+                        <div class="row">
+                            <div class="col s12 m12">
+                              <div class="card">
+                                <div class="card-image">
+                                  <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201911/2019-11-03T154440Z_1655064004_-770x433.png">
+                                  <!--//https://drive.google.com/uc?export=view&id=1N2s-aUJHmENlJ05329Yb0INjyG4nciYH
+                                  //https://drive.google.com/file/d/1N2s-aUJHmENlJ05329Yb0INjyG4nciYH/view?usp=sharing
+                                  -->
+                                 
+                                </div>
+                                <div class="card-content">
+                                  <p>Djokovic dominates to win 5th Paris Masters title</p>
+                                </div>
+                                
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col s12 m12">
+                              <div class="card">
+                                <div class="card-image">
+                                  <img src="https://drive.google.com/uc?export=view&id=1sPrIytJS4QRDNFZ8m8Z6VbLwamR3uLdq">
+                                 
+                                </div>
+                                <div class="card-content">
+                                  <p>Durham helps Meralco snap Ginebra's win streak</p>
+                                </div>
+                                
+                              </div>
+                            </div>
+                          </div>
+
+                          
+
+                    </div>
+
+                    <div class="col m4 s12">
+                                           
+                        <div class="row">
+                            <div class="col s12 m12">
+                              <div class="card">
+                                <div class="card-image">
+                                  <img src="https://drive.google.com/uc?export=view&id=1b4KlN1MKpvNtIF5QXukJq9s2ARU2827e">
+                                  
+                                </div>
+                                <div class="card-content">
+                                  <p>Late Everton equaliser denies Tottenham</p>
+                                </div>
+                                
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col s12 m12">
+                              <div class="card">
+                                <div class="card-image">
+                                  <img src="https://drive.google.com/uc?export=view&id=1JbipQ9msY2u7YUuHIxpD1D53qQYF8RtX">
+                                  
+                                </div>
+                                <div class="card-content">
+                                  <p>Mushfiqur seals Bangladesh's first T20I win over India</p>
+                                </div>
+                                
+                              </div>
+                            </div>
+                          </div>
+
+                         
+
+                    </div>
+
+                    <div class="col m4 s12">
+                                           
+                        <div class="row">
+                            <div class="col s12 m12">
+                              <div class="card">
+                                <div class="card-image">
+                                  <img src="https://drive.google.com/uc?export=view&id=1Awi0jYWA5axmL38_obwoWxVPgICjPSgw">
+                                  >
+                                </div>
+                                <div class="card-content">
+                                  <p>Satwiksairaj-Chirag lose French Open final to world number-1 pair</p>
+                                </div>
+                                
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col s12 m12">
+                              <div class="card">
+                                <div class="card-image">
+                                  <img src="https://drive.google.com/uc?export=view&id=1N2s-aUJHmENlJ05329Yb0INjyG4nciYH">
+                                  
+                                </div>
+                                <div class="card-content">
+                                  <p>With a little help from Vladmir Kramnik, India in search for next Vishy</p>
+                                </div>
+                                
+                              </div>
+                            </div>
+                          </div>
+
+                          
+
+                    </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+ <!-- include("theme-customizer")  -->
+
+
+<%- include("footer") -%>

@@ -1,0 +1,260 @@
+<%- include("header") -%>
+
+
+<%- include("sidenav") -%>
+
+
+    <!-- BEGIN: Page Main-->
+    <div id="main">
+      <div class="row">
+        <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+        <div class="col s12">
+          <div class="container">
+            <!-- Current balance & total transactions cards-->
+
+<!--
+<div class="col s12">
+          <div class="container">
+            <div class="section">
+
+ -->
+
+<!--   <div class="card">
+    <div class="card-content">
+      <p class="caption mb-0">Tables are a nice way to organize a lot of data. We provide a few utility classes to help
+        you style your table as easily as possible. In addition, to improve mobile experience, all tables on
+        mobile-screen widths are centered automatically.</p>
+    </div>
+  </div> -->
+
+<!--  <div class="card">
+    <div class="card-content">
+
+ -->
+
+
+ <!-- FORM STARTS -->
+ <div class="col s12 ">
+     <div id="inline-form" class="card card card-default scrollspy">
+       <div class="card-content">
+
+         <form method="post" action="/healthy" class="col s12">
+
+           <div class="row mt-0">
+
+
+               <div class="input-field col m5 s12">
+                 <!-- <i class="material-icons prefix">account_circle</i> -->
+                 <input name="healthyFoodItem" id="icon_prefix1" type="text" class="validate">
+                 <label for="icon_prefix1" class="">What did you eat this hour?</label>
+               </div>
+
+               <div class="input-field col m5 s10">
+                 <!-- <i class="material-icons prefix">lock_outline</i> -->
+                 <select name="healthyFoodCategory">
+                  <option value="Healthy">Healthy</option>
+                  <option value="Unhealthy">Unhealthy</option>
+
+                </select>
+                <label>Category</label>
+               </div>
+
+               <div class="input-field col m2 s2">
+                 <div class="input-field col s2">
+                   <button onclick="setHourID();" class="waves-effect waves-circle waves-light btn-floating btn-medium secondary-content gradient-45deg-light-blue-cyan" type="submit">
+                     <i class="material-icons">add</i></button>
+                 </div>
+               </div>
+
+               <input name="hour" id="hour" type="hidden" value="">
+
+
+
+            </div>
+         </form>
+
+         <div id="view-higlight-table" class="active">
+             <div class="row">
+                   <div class="col s12">
+
+                     <table class="highlight">
+                     <!--   <thead>
+                         <th>Hour</th>
+                         <th>Activity</th>
+                         <th>Category</th>
+                       </thead>
+-->                          
+                      <tbody>
+
+                         <% healthyFoodItems.forEach(function(item) { %>
+                         <tr>
+                           <td> <i> <span class="hour"> <%=item.hour%>-<%=item.hour+1%> </span> </i> </td>
+                           <td> <%=item.description%> </td>
+                           <td> <%=item.category%> </td>
+                         </tr>
+                         <% }) %>
+
+                     </table>
+
+                   </div>
+             </div>
+         </div>
+
+
+
+       </div>
+     </div>
+   </div>
+   <!-- FORM ENDS -->
+
+
+
+
+<div class="row mt-4">
+    <div class="col s12 m4 l4">
+ 
+ 
+       <!-- Current Balance -->
+ 
+       <div class="card animate fadeLeft">
+          <div class="card-content">
+             <h4 class="card-title mb-0">Food Categories  <i class="material-icons float-right"></i></h4>
+             <p class="medium-small">In the last 28 days</p>
+             <div class="current-balance-container">
+                <div id="current-balance-donut-chart" class="current-balance-shadow"></div>
+             </div>
+             <% if ( typeof(efforts_tot) !== "undefined" && efforts_tot.length > 0) { %>
+              <h5 class="center-align"><%=efforts_tot[0].hours%></h5>
+           <% } %>
+           <p class="medium-small center-align">Items Entered In the last 28 days</p>
+         </div>
+       </div>
+    </div>
+ 
+ 
+ 
+    <div class="col s12 m8 l8 animate fadeRight">
+       <!-- Total Transaction -->
+       <div class="card">
+          <div class="card-content">
+             <h4 class="card-title mb-0">Number of Food Items Entered <i class="material-icons float-right"></i></h4>
+             <p class="medium-small">In the last 14 days</p>
+             <div class="total-transaction-container">
+                <div id="total-transaction-line-chart" class="total-transaction-shadow"></div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ <!--/ Current balance & total transactions cards-->
+ 
+ 
+ 
+ 
+
+ <div class="row">
+    <!-- <div class="col s12 m6 l4">
+       <div class="card padding-4 animate fadeLeft">
+          <div class="col s5 m5">
+             <h5 class="mb-0">1885</h5>
+             <p class="no-margin">New</p>
+             <p class="mb-0 pt-8">1,12,900</p>
+          </div>
+          <div class="col s7 m7 right-align">
+             <i class="material-icons background-round mt-5 mb-5 gradient-45deg-purple-amber gradient-shadow white-text">perm_identity</i>
+             <p class="mb-0">Total Clients</p>
+          </div>
+       </div>
+       <div id="chartjs" class="card pt-0 pb-0 animate fadeLeft">
+          <div class="padding-2 ml-2">
+             <span class="new badge gradient-45deg-indigo-purple gradient-shadow mt-2 mr-2">+ $900</span>
+             <p class="mt-2 mb-0 font-weight-600">Today's revenue</p>
+             <p class="no-margin grey-text lighten-3">$40,512 avg</p>
+             <h5>$ 22,300</h5>
+          </div>
+          <div class="row">
+             <div class="sample-chart-wrapper card-gradient-chart">
+                <canvas id="custom-line-chart-sample-three" class="center"></canvas>
+             </div>
+          </div>
+       </div>
+    </div> -->
+    <div class="col s12 m12 l12">
+       <div class="card subscriber-list-card animate fadeRight">
+          <div class="card-content pb-1">
+             <h4 class="card-title mb-0">Diet Feed<i class="material-icons float-right"></i></h4>
+          </div>
+          <table class="subscription-table responsive-table highlight">
+             <thead>
+                <tr>
+                   <th>Date</th>
+                   <th>Time</th>
+                   <th>Description</th>
+                   <th>Category</th>
+                </tr>
+             </thead>
+             <tbody>
+                <!-- <tr>
+                   <td> </td>
+                   <td>ABC Fintech LTD.</td>
+                   <td>Jan 1,2019</td>
+                   <td><span class="badge pink lighten-5 pink-text text-accent-2">Close</span></td>
+                   <td>$ 1000.00</td>
+                   <td class="center-align"><a href="#"><i class="material-icons pink-text">clear</i></a></td>
+                </tr>
+                <tr>
+                   <td>Aldin Rakić</td>
+                   <td>ACME Pvt LTD.</td>
+                   <td>Jan 10,2019</td>
+                   <td><span class="badge green lighten-5 green-text text-accent-4">Open</span></td>
+                   <td>$ 3000.00</td>
+                   <td class="center-align"><a href="#"><i class="material-icons pink-text">clear</i></a></td>
+                </tr>
+                <tr>
+                   <td>İris Yılmaz</td>
+                   <td>Collboy Tech LTD.</td>
+                   <td>Jan 12,2019</td>
+                   <td><span class="badge green lighten-5 green-text text-accent-4">Open</span></td>
+                   <td>$ 2000.00</td>
+                   <td class="center-align"><a href="#"><i class="material-icons pink-text">clear</i></a></td>
+                </tr>
+                <tr>
+                   <td>Lidia Livescu</td>
+                   <td>My Fintech LTD.</td>
+                   <td>Jan 14,2019</td>
+                   <td><span class="badge pink lighten-5 pink-text text-accent-2">Close</span></td>
+                   <td>$ 1100.00</td>
+                   <td class="center-align"><a href="#"><i class="material-icons pink-text">clear</i></a></td>
+                </tr> -->
+ 
+ 
+                <% wiseListItemsAll.forEach(function(item) { %>
+                   <tr>
+                      <td> <span class="date"><%=item.date_created_at%> </span></td>
+                     <td> <i> <span class="hour"> <%=item.hour%>-<%=item.hour+1%> </span> </i> </td>
+                     <td> <%=item.description%> </td>
+                     <td> <%=item.category%> </td>
+                   </tr>
+                   <% }) %>
+ 
+ 
+ 
+             </tbody>
+          </table>
+       </div>
+    </div>
+ </div>
+ 
+ 
+     <!-- END: Page Main-->
+ 
+ 
+ 
+ 
+ 
+ <%- include("footer") -%>
+ 
+ <%- include("footer-graphs") -%>
+ 
+ <%- include("toast") -%>
+

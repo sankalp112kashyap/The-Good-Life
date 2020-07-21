@@ -1,0 +1,53 @@
+<%- include("header") -%>
+<%- include("sidenav") -%>
+
+
+
+<div id="main">
+    <div class="row">
+      <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+      <div class="col s12">
+        <div class="container">
+
+<div class="row mt-0">
+
+<form action="/play-sports" method="POST">
+    <div class="input-field col m5 s12">
+      <!-- <i class="material-icons prefix">account_circle</i> -->
+      <input name="sport" id="icon_prefix1" type="text" class="validate">
+      <label for="icon_prefix1" class="">Sport</label>
+    </div>
+
+    <div class="input-field col m5 s10">
+      <!-- <i class="material-icons prefix">lock_outline</i> -->
+      <input name="day" class="datepicker" id="icon_password" type="date">
+      <label for="icon_password" class="">Date</label>
+    </div>
+    
+
+    <div class="input-field col m2 s2">
+      <div class="input-field col s2">
+        <button  class="waves-effect waves-circle waves-light btn-floating btn-medium secondary-content gradient-45deg-light-blue-cyan" type="submit">
+          <i class="material-icons">add</i></button>
+      </div>
+    </div>
+
+</form>
+
+
+ </div>
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+ <!-- %- include("theme-customizer") -% -->
+ <%- include("footer") -%>

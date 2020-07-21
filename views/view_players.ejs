@@ -1,0 +1,61 @@
+<%- include("header") -%>
+<%- include("sidenav") -%>
+
+
+
+<div id="main">
+
+    <div class="row">
+      <div class=""></div>
+      <div class="col s12">
+        <div class="container">
+
+            <div id="view-higlight-table" class="active">
+            <div class="row">
+                  <div class="col s12">
+
+                    <table class="highlight">
+
+                        <tbody>
+
+                        <% EventList.forEach(function(item) { %>
+                        <tr>
+                            
+                          <td> <%=item.uname%> </td>
+                          <td> <%=item.uemail%> </td>
+                          
+                        
+                        </tr>
+                        <% }) %>
+
+                    </table>
+
+                  </div>
+            </div>
+
+            <form method="post" action="/add_player"> 
+
+                    <input name="e_id" id="eid" type="hidden" value="<%=eidd%>">
+
+            <div class="input-field col m2 s2">
+                    <div class="input-field col s2">
+                      <button  class="waves-effect waves-circle waves-light btn-floating btn-medium secondary-content gradient-45deg-light-blue-cyan" type="submit">
+                        <i class="material-icons">add</i></button>
+                    </div>
+                  </div>
+                </form>
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+ <!-- include("theme-customizer")  -->
+ <%- include("footer") -%>

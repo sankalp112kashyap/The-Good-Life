@@ -1,0 +1,134 @@
+<style>
+a.botui-message-content-link:focus{outline:thin dotted}a.botui-message-content-link:focus:active,a.botui-message-content-link:focus:hover{outline:0}form.botui-actions-text{margin:0}button.botui-actions-buttons-button,input.botui-actions-text-input{margin:0;font-size:100%;line-height:normal;vertical-align:baseline}button.botui-actions-buttons-button::-moz-focus-inner,input.botui-actions-text-input::-moz-focus-inner{border:0;padding:0}button.botui-actions-buttons-button{cursor:pointer}
+.botui-app-container{position:fixed; bottom: 10px; right: 10px; width:390px;height:800px;line-height:1}@media (min-width:400px){.botui-app-container{width:250px;height:400px;margin:0 auto;border-radius: 5%}}.botui-container{width:100%;height:100%;overflow-y:auto;overflow-x:hidden}.botui-message{margin:10px 0;min-height:20px}.botui-message:after{display:block;content:"";clear:both}.botui-message-content{width:auto;max-width:75%;display:inline-block}.botui-message-content.human{float:right}.botui-message-content iframe{width:100%}.botui-message-content-image{margin:5px 0;display:block;max-width:200px;max-height:200px}.botui-message-content-link{text-decoration:underline}.profil{position:relative;border-radius:50%}.profil.human{float:right;margin-left:5px}.profil.agent{float:left;margin-right:5px}.profil>img{width:26px;height:26px;border:2px solid #e8e8e8}.profil>img.agent{content:url(http://decodemoji.com/img/logos/blue_moji_hat.svg);border-radius:50%}button.botui-actions-buttons-button{margin-top:10px;margin-bottom:10px}button.botui-actions-buttons-button:not(:last-child){margin-right:10px}@media (min-width:400px){.botui-actions-text-submit{display:none}}
+</style>  
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans);.botui-container{ width:250px;height:400px;visibility: hidden;font-size:14px;background-image: url("https://drive.google.com/uc?export=view&id=1kW8WDNWoErA2P9OUUIIqAMQUEXGVGkwv");font-family:"Helvetica",sans-serif;border-radius: 4%}.botui-messages-container{padding:10px 20px}.botui-actions-container{padding:10px 20px}.botui-message{min-height:30px}.botui-message-content{padding:7px 13px;border-radius:15px;color:black;background-color:#ebebeb}.botui-message-content.human{color:black;background-color:white}.botui-message-content.text{line-height:1.3}.botui-message-content.loading{background-color:rgba(206,206,206,.5);line-height:1.3;text-align:center}.botui-message-content.embed{padding:5px;border-radius:5px}.botui-message-content-link{color:#919292}.botui-actions-text-input{border:0;outline:0;border-radius:0;padding:5px 7px;font-family:"Open Sans",sans-serif;background-color:transparent;color:white;border-bottom:1px solid #919292}.botui-actions-text-submit{color:#fff;width:30px;padding:5px;height:30px;line-height:1;border-radius:50%;border:1px solid #919292;background:#777979}.botui-actions-buttons-button{border:0;color:#fff;line-height:1;cursor:pointer;font-size:14px;font-weight:500;padding:7px 15px;border-radius:4px;font-family:"Open Sans",sans-serif;background:#777979;box-shadow:2px 3px 4px 0 rgba(0,0,0,.25)}.botui-actions-text-select{border:0;outline:0;border-radius:0;padding:5px 7px;font-family:"Open Sans",sans-serif;background-color:transparent;color:#595a5a;border-bottom:1px solid #919292}.botui-actions-text-searchselect{border:0;outline:0;border-radius:0;padding:5px 7px;font-family:"Open Sans",sans-serif;background-color:transparent;color:#595a5a;border-bottom:1px solid #919292}.botui-actions-text-searchselect .dropdown-toggle{border:none!important}.botui-actions-text-searchselect .selected-tag{background-color:transparent!important;border:0!important}.slide-fade-enter-active{transition:all .3s ease}.slide-fade-enter,.slide-fade-leave-to{opacity:0;transform:translateX(-10px)}.dot{width:.5rem;height:.5rem;border-radius:.5rem;display:inline-block;background-color:#919292}.dot:nth-last-child(1){margin-left:.3rem;animation:loading .6s .3s linear infinite}.dot:nth-last-child(2){margin-left:.3rem;animation:loading .6s .2s linear infinite}.dot:nth-last-child(3){animation:loading .6s .1s linear infinite}@keyframes loading{0%{transform:translate(0,0);background-color:#ababab}25%{transform:translate(0,-3px)}50%{transform:translate(0,0);background-color:#ababab}75%{transform:translate(0,3px)}100%{transform:translate(0,0)}}
+</style> 
+
+<style>
+  .buttons{
+    
+    background-image: url("https://drive.google.com/uc?export=view&id=1xoSeGpsTcWNflpV-ekv4mlmg80o-HHT5");
+		position: fixed;
+		bottom:20px;
+		right: 12px;
+		padding:50px;
+		text-align: center;
+		border-radius: 50%;
+		visibility: visible;
+		opacity: 0.7;
+    transition: 0.3;
+    outline: none;
+    border: none;
+	}
+
+  .button:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+  .buttons1{
+    position: fixed;
+    background-image: url("https://drive.google.com/uc?export=view&id=1xoSeGpsTcWNflpV-ekv4mlmg80o-HHT5");
+    outline: none;
+		bottom:20px;
+		right: 270px;
+		padding:50px;
+		text-align: center;
+		border-radius: 50%;
+    visibility: hidden;
+    border: none;
+  }
+
+    .button:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+</style>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 
+ <script>
+ $(document).ready(function(){
+   //https://drive.google.com/uc?export=view&id=1xoSeGpsTcWNflpV-ekv4mlmg80o-HHT5
+   //https://drive.google.com/file/d/1kW8WDNWoErA2P9OUUIIqAMQUEXGVGkwv/view?usp=sharing
+   //https://drive.google.com/file/d/1njsE3k4c5uemTe6KGc3SyIxPvhML78bM/view?usp=sharing
+   //https://drive.google.com/file/d/1xoSeGpsTcWNflpV-ekv4mlmg80o-HHT5/view?usp=sharing
+    $(".buttons").click(function()
+    {
+      $(".botui-container").css("visibility","visible");
+      $(".botui-container").css("border","2px solid blue");
+      $(".botui-container").fadeIn();
+      $(".buttons").hide();
+      $(".buttons1").css("visibility","visible");
+      $(".buttons1").fadeIn();
+    }
+  );
+  }
+  );
+  
+  $(document).ready(function(){
+    $(".buttons1").click(function()
+    {
+      $(".botui-container").fadeOut("slow");
+      $(".buttons1").fadeOut("slow");
+      $(".buttons").fadeIn("slow");
+    });
+  });
+
+</script>
+
+    
+
+      <%# Bot Declaration%>
+    <div class="botui-app-container" id="api-bot">
+      <bot-ui></bot-ui>
+    </div>
+
+    <div>
+      <button id="#demo1" class="buttons">
+
+      </button>
+      <button id="#demo2" class="buttons1">
+
+      </button>
+    </div>
+
+
+
+
+    <%# JS STUFF%>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/botui/build/botui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/botui/build/botui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <%# Edit the Conversation from Convo.js%>
+    <script src="js/convo.js"></script>
+    <script src="js/socket.js"></script>
+  
+  

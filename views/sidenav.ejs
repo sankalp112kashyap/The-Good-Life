@@ -1,0 +1,117 @@
+    <!-- BEGIN: SideNav-->
+    <aside class="sidenav-main nav-expanded nav-lock nav-collapsible sidenav-dark sidenav-active-square">
+      <div class="brand-sidebar">
+
+        <h1 class="logo-wrapper">
+          <a class="brand-logo " href="/">
+            <img src="images/logo/materialize-logo-color.png" id="good-life-logo" alt="logo"/>
+            <span class="logo-text hide-on-med-and-down">Nirvana</span>
+          </a>
+          <a class="navbar-toggler" href="#">
+            <i class="material-icons">radio_button_checked</i>
+          </a>
+        </h1>
+      </div>
+
+      <ul class="sidenav sidenav-collapsible leftside-navigation collapsible sidenav-fixed menu-shadow" id="slide-out" data-menu="menu-navigation" data-collapsible="menu-accordion">
+        <li class="active bold">
+          <a class="collapsible-header waves-effect waves-cyan " href="#">
+            <i class="material-icons">equalizer</i>
+
+             <span class="menu-title" data-i18n=""><b>ANALYTICS</b></span>
+
+            <!-- <span class="badge badge pill orange float-right mr-10">1</span> -->
+          </a>
+
+          <div class="collapsible-body">
+
+            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+
+              <% if (navHighlight == "healthy") { %>
+                <li class="active">
+                  <a class="collapsible-body active" href="/healthy" data-i18n="">
+                  <i class="material-icons">healing</i>
+              <% } else { %>
+                <li>
+                  <a class="collapsible-body" href="/healthy" data-i18n="">
+                    <i class="material-icons">radio_button_unchecked</i>
+              <% } %>
+                    <span>Health</span>
+                </a>
+              </li>
+              <% if (navHighlight == "wealthy") { %>
+                <li class="active">
+                  <a class="collapsible-body active" href="/wealthy" data-i18n="">
+                  <i class="material-icons">account_balance</i>
+              <% } else { %>
+                <li>
+                  <a class="collapsible-body" href="/wealthy" data-i18n="">
+                    <i class="material-icons">radio_button_unchecked</i>
+              <% } %>
+                    <span>Finance</span>
+                </a>
+              </li>
+
+              <% if (navHighlight == "wise") { %>
+                <li class="active">
+                  <a class="collapsible-body active" href="/" data-i18n="">
+                  <i class="material-icons">accessibility_new</i>
+              <% } else { %>
+                <li>
+                  <a class="collapsible-body" href="/" data-i18n="">
+                    <i class="material-icons">radio_button_unchecked</i>
+              <% } %>
+                  <span>Wisdom</span>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </li>
+
+
+                <li class="navigation-header"><a class="navigation-header-text">Sports</a><i class="navigation-header-icon material-icons">more_horiz</i>
+        </li>
+        <li class="bold"><a class="waves-effect waves-cyan " href="/play-sports"><i class="material-icons">sports_handball</i><span class="menu-title" data-i18n="">Play Sports</span></a>
+        </li>
+        <li class="bold"><a class="waves-effect waves-cyan " href="/host-events"><i class="material-icons">sports</i><span class="menu-title" data-i18n="">Host Events</span></a>
+        </li>
+        <li class="bold"><a class="waves-effect waves-cyan " href="/sports-news"><i class="material-icons">subject</i><span class="menu-title" data-i18n="">Sports News </span></a>
+        </li>
+
+        <li class="navigation-header"><a class="navigation-header-text">Meditation</a><i class="navigation-header-icon material-icons">more_horiz</i>
+        </li>
+        <li class="bold"><a class="waves-effect waves-cyan " href="/video-lessons"><i class="material-icons">video_library</i><span class="menu-title" data-i18n="">Video Lessons</span></a>
+        </li>
+        <li class="bold"><a class="waves-effect waves-cyan " href="/guided-meditations"><i class="material-icons">spa</i><span class="menu-title" data-i18n="">Guided Meditations</span></a>
+        </li>
+
+        <li class="bold"><a class="waves-effect waves-cyan " href="/podcasts"><i class="material-icons">audiotrack</i><span class="menu-title" data-i18n="">Podcasts</span></a>
+        </li>
+        <li class="bold"><a class="waves-effect waves-cyan " href="/upload-videos"><i class="material-icons">cloud_upload</i><span class="menu-title" data-i18n="">Upload Videos</span></a>
+        </li>
+        <li class="bold"><a class="waves-effect waves-cyan " href="/community"><i class="material-icons">people</i><span class="menu-title" data-i18n="">Community</span></a>
+        </li> 
+
+      
+
+
+
+        <li class="navigation-header"><a class="navigation-header-text">Help</a><i class="navigation-header-icon material-icons">more_horiz</i>
+        </li>
+        <li class="bold"><a class="waves-effect waves-cyan " href="/chatbot"><i class="material-icons">chat</i><span class="menu-title" data-i18n="">Chat</span></a>
+        </li>
+        <!-- <hr color="lightgrey"/> -->
+        <li class="bold"><a class="waves-effect waves-cyan " href="mailto:rishabh.jaiswal.it@gmail.com?Subject=Feedback%20again"><i class="material-icons">report</i><span class="menu-title" data-i18n="">Report</span></a>
+        </li>
+
+        <!-- <li class="bold"><a class="waves-effect waves-cyan " href="app-todo.html"><i class="material-icons">check</i><span class="menu-title" data-i18n="">Community</span></a>
+        </li> -->
+
+      </ul>
+
+      <div class="navigation-background"></div><a class="sidenav-trigger btn-sidenav-toggle btn-floating btn-medium waves-effect waves-light hide-on-large-only" href="#" data-target="slide-out"><i class="material-icons">menu</i></a>
+    </aside>
+
+
+    <!-- END: SideNav-->

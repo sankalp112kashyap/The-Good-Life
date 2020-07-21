@@ -1,0 +1,63 @@
+<%- include("header") -%>
+
+
+<%- include("sidenav") -%>
+
+
+    <!-- BEGIN: Page Main-->
+    <div id="main">
+      <div class="row">
+        <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+        <div class="col s12">
+          <div class="container">
+          
+
+  <div class="col s12 ">
+      <div id="inline-form" class="card card card-default scrollspy">
+        <div class="card-content">
+
+          <form method="post" action="/upload-videos" class="col s12">
+
+            <div class="row mt-0">
+              
+                <div class="input-field col m5 s12">
+                  <!-- <i class="material-icons prefix">account_circle</i> -->
+                  <input name="video_url" id="icon_prefix1" type="text" class="validate">
+                  <label for="icon_prefix1" class="">Upload Youtube Url</label>
+                </div>
+
+                <div class="input-field col m4 s12">
+                  <!-- <i class="material-icons prefix">lock_outline</i> -->
+                  <input name="description" id="icon_password" type="text" class="validate">
+                  <label for="icon_password" class="">Description</label>
+                </div>
+
+                
+
+                <div class="input-field col m3 s2">
+                  <div class="input-field col s2">
+                    <button onclick="setHourID();" class="waves-effect waves-circle waves-light btn-floating btn-medium secondary-content gradient-45deg-light-blue-cyan" type="submit">
+                      <i class="material-icons">navigate_next</i></button>
+                  </div>
+                </div>
+
+                <input name="hour" id="hour" type="hidden" value="">
+
+
+
+             </div>
+          </form>
+
+          
+
+
+        </div>
+      </div>
+    </div>
+
+    <!-- END: Page Main-->
+
+ <!-- %- include("theme-customizer") -% -->
+
+
+<%- include("footer") -%>
