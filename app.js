@@ -61,8 +61,8 @@ handleDisconnect(); // call the handleDisconnect function once
 
 
 app.get("/apology/:message", function(req, res) {
-
-  res.send("Oops: " + req.params.message.split("_").join(" "));
+  const message = "Oops: " + req.params.message.split("_").join(" ");
+  res.send();
   // TODO 1.GO BACK 2.good looking apology STAY AWAY
 });
 
@@ -83,18 +83,18 @@ app.get("/api/:username/:password", function(req, res) {
 
 
 // API TEST PLEASE REMOVE
-app.get("/api/:username/", function(req, res) {
+// app.get("/api/:username/", function(req, res) {
 
-  let sql = "SELECT * FROM users WHERE username=?";
-  let query = db.query(sql, [req.params.username], (err, results) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(results);
+//   let sql = "SELECT * FROM users WHERE username=?";
+//   let query = db.query(sql, [req.params.username], (err, results) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       res.send(results);
       
-    }
-  });
-});
+//     }
+//   });
+// });
 
 app.get("/", function(req, res) {
     // console.log(req.session);
@@ -579,12 +579,12 @@ app.post("/wealthy", function(req, res) {
 
 
 app.get("/user-login", function(req, res) {
-  res.render("user-login") // render the user-login.ejs page
+  res.render("user-login", {message: ""}) // render the user-login.ejs page
 });
 app.post("/user-login", function(req, res) {
 
   if (!req.body.username || !req.body.password) {
-    res.redirect("/apology/Invalid_Input")
+    res.render("/user-login", {message: "Invalid Input"})
   }
 
   var user = {
@@ -617,15 +617,14 @@ app.post("/user-login", function(req, res) {
             }
             else {
               // incorrect password
-              res.redirect("/apology/Incorrect_Username_Or_Password")
+              res.render("user-login", {message: "Incorrect Username Or Password"});
             }
           });
 
         } else {
 
           // username not found
-          res.redirect("/apology/Incorrect_Username_Or_Password")
-      }
+          res.render("user-login", {message: "Incorrect Username Or Password"});      }
     }
   });
 
@@ -644,12 +643,13 @@ app.get('/logout', function(req, res){
 
 
 app.get("/user-register", function(req, res) {
-  res.render("user-register")
+  res.render("user-register", {message: ""})
 });
 app.post("/user-register", function(req, res) {
 
   if (req.body.password != req.body.passwordAgain) {
-    res.redirect("/apology/Passwords_Do_Not_Match")
+    res.render("user-register", {message: "Passwords Do Not Match"})
+
   } else {
 
     var newUser = {
@@ -660,12 +660,13 @@ app.post("/user-register", function(req, res) {
 
     bcrypt.hash(newUser.password, saltRounds, function(err, hash) {
       if (err) {
-        res.redirect("/apology/Error_After_Registering")
+        res.render("user-register", {message: "Error After Registering"})
       } else {
         db.query("INSERT INTO users(username, password, email) VALUES(?, ?, ?)", [newUser.username, hash, newUser.email], function (error, results, fields) {
           if (error) {
             console.log(error);
-            res.redirect("/apology/username_or_email_already_exists")
+              res.render("user-register", {message: "Username Or Email already Exists"})
+
           }
           else {
             // console.log(results.insertId);
